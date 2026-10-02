@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Emon Hassan | Portfolio</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:Arial,sans-serif;background:#0b1020;color:#fff;line-height:1.6}
+a{text-decoration:none;color:inherit}img{max-width:100%;display:block}
+.container{width:min(1120px,92%);margin:auto}
+header{position:fixed;top:0;left:0;right:0;z-index:10;background:#0b1020ee;border-bottom:1px solid #26314a}
+nav{height:70px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:25px;font-weight:bold}.logo span,h1 span{color:#00d9ff}
+.nav-links{display:flex;gap:22px;list-style:none}.nav-links a{color:#cbd4e4}.nav-links a:hover{color:#00d9ff}
+.hero{min-height:100vh;display:flex;align-items:center;padding:100px 0 60px;background:radial-gradient(circle at 15% 20%,#00d9ff22,transparent 30%),radial-gradient(circle at 85% 70%,#7e57ff22,transparent 30%)}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center}
+.tag{display:inline-block;color:#00d9ff;border:1px solid #00d9ff55;border-radius:30px;padding:7px 14px;margin-bottom:18px}
+h1{font-size:clamp(42px,7vw,76px);line-height:1.05;margin-bottom:20px}
+.hero p{color:#b9c2d3;font-size:18px;max-width:650px;margin-bottom:28px}
+.buttons{display:flex;gap:12px;flex-wrap:wrap}.btn{padding:13px 22px;border-radius:10px;font-weight:bold}
+.primary{background:#00d9ff;color:#06101a}.outline{border:1px solid #34405a}
+.hero-photo img{width:min(360px,85vw);aspect-ratio:1;object-fit:cover;border-radius:28px;margin:auto;border:6px solid #ffffff12}
+section{padding:85px 0}.title{text-align:center;margin-bottom:42px}.title h2{font-size:38px}.title p{color:#98a3b8}
+.about{display:grid;grid-template-columns:.8fr 1.2fr;gap:40px;align-items:center}.about img{border-radius:22px;border:1px solid #26314a;max-width:430px;margin:auto}.about h3{font-size:30px;margin-bottom:12px}.about p{color:#aeb8ca;margin-bottom:14px}
+.skills{display:grid;grid-template-columns:repeat(5,1fr);gap:15px}.skill,.card,.project,.contact{background:#121a2d;border:1px solid #26314a;border-radius:16px}
+.skill{padding:22px 10px;text-align:center}.skill small,.project p,.card p,.card li{color:#98a3b8}
+.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.project{overflow:hidden;cursor:pointer}.project:hover{border-color:#00d9ff;transform:translateY(-4px)}.project{transition:.2s}.project img{width:100%;aspect-ratio:16/10;object-fit:cover}.project-info{padding:16px}
+.experience{display:grid;grid-template-columns:1fr 1fr;gap:20px}.card{padding:25px}.card h3{margin-bottom:8px}.card ul{padding-left:20px;margin-top:10px}
+.contact{max-width:800px;margin:auto;padding:32px;text-align:center}.contact p{color:#aeb8ca}.contact-list{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}.contact-item{background:#0b1020;padding:17px;border-radius:12px;color:#cbd4e4}.contact-item strong{display:block;color:#00d9ff}
+footer{text-align:center;padding:25px;border-top:1px solid #202a40;color:#7f8ba0}
+.lightbox{position:fixed;inset:0;background:#000e;display:none;align-items:center;justify-content:center;padding:20px;z-index:100}.lightbox.active{display:flex}.lightbox img{max-width:95vw;max-height:90vh;border-radius:10px}.close{position:absolute;right:28px;top:15px;font-size:42px;cursor:pointer}
+@media(max-width:900px){.hero-grid,.about,.experience{grid-template-columns:1fr}.skills{grid-template-columns:repeat(3,1fr)}.projects{grid-template-columns:repeat(2,1fr)}.hero{text-align:center}.buttons{justify-content:center}}
+@media(max-width:600px){.nav-links{display:none}.skills{grid-template-columns:repeat(2,1fr)}.projects{grid-template-columns:1fr}.contact-list{grid-template-columns:1fr}section{padding:65px 0}}
+</style>
+
+<style id="premium-upgrade">
+:root{--accent:#00d9ff;--accent2:#7c5cff;--bg:#070b16;--card:#10182a}
+body{background:var(--bg);overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background:
+radial-gradient(circle at 10% 10%,#00d9ff10,transparent 28%),
+radial-gradient(circle at 90% 30%,#7c5cff12,transparent 30%);z-index:-1}
+header{background:#070b16d9;box-shadow:0 8px 30px #0003}
+.logo{letter-spacing:.5px}
+.hero{position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;width:420px;height:420px;border:1px solid #00d9ff22;border-radius:50%;right:-180px;top:15%;box-shadow:0 0 0 60px #00d9ff05,0 0 0 120px #00d9ff03}
+.hero-photo img{box-shadow:0 0 0 1px #ffffff12,0 25px 80px #0008;transition:.5s}
+.hero-photo img:hover{transform:translateY(-8px) rotate(1deg);box-shadow:0 0 0 1px #00d9ff55,0 30px 90px #00d9ff18}
+.btn{transition:.25s;position:relative;overflow:hidden}
+.btn:hover{transform:translateY(-3px);box-shadow:0 10px 30px #00d9ff20}
+.primary{box-shadow:0 8px 25px #00d9ff18}
+section{position:relative}
+.skill,.card,.project,.contact{box-shadow:0 15px 45px #0002}
+.skill{transition:.3s}.skill:hover{transform:translateY(-8px) scale(1.02);box-shadow:0 18px 45px #00d9ff12}
+.project{transition:.3s}.project img{transition:.5s}.project:hover{transform:translateY(-8px);box-shadow:0 18px 50px #0006}
+.project:hover img{transform:scale(1.04)}
+.section-reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
+.section-reveal.show{opacity:1;transform:none}
+#progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent2));width:0;z-index:9999}
+.whatsapp{position:fixed;right:22px;bottom:22px;width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#25D366;color:white;font-size:27px;z-index:1001;box-shadow:0 10px 30px #0006;transition:.25s}
+.whatsapp:hover{transform:scale(1.08) translateY(-3px)}
+.cv-note{display:inline-block;margin-top:16px;color:#9aa7bb;font-size:13px}
+@media(max-width:600px){.whatsapp{right:16px;bottom:16px}.hero:after{display:none}}
+</style>
+
+</head>
+<body>
+<div id="progress"></div>
+<a class="whatsapp" href="https://wa.me/8801405494797" target="_blank" rel="noopener" aria-label="WhatsApp">◉</a>
+
+
+<header><div class="container"><nav>
+<a class="logo" href="#home">Mahmudul Hasan Emon<span>.</span></a>
+<ul class="nav-links"><li><a href="#home">Home</a></li><li><a href="#about">About</a></li><li><a href="#skills">Skills</a></li><li><a href="#projects">Projects</a></li><li><a href="#experience">Experience</a></li><li><a href="#contact">Contact</a></li></ul>
+</nav></div></header>
+
+<section class="hero" id="home"><div class="container hero-grid">
+<div><div class="tag">Available for Freelance Work</div>
+<h1>Hi, I'm <span>Mahmudul Hasan Emon</span></h1>
+<p>Graphic Designer specializing in Photoshop, Illustrator, social media creatives, data entry and digital marketing support.</p>
+<div class="buttons"><a class="btn primary" href="#projects">View My Work</a><a class="btn outline" href="#contact">Contact Me</a><a class="btn outline" href="#contact">Hire Me</a></div></div>
+<div class="hero-photo"><img src="emon-formal.jpg" alt="Emon Hassan"></div>
+</div></section>
+
+<section id="about"><div class="container">
+<div class="title"><h2>About Me</h2><p>A little about my work and experience</p></div>
+<div class="about"><img src="emon-portrait-outdoor.jpg" alt="Emon Hassan portrait">
+<div><h3>Creative & Professional Designer</h3><p>I am Emon Hassan, a creative designer focused on creating clean, modern and attractive visual content for businesses, educational institutes and personal brands.</p><p>I work with Photoshop and Illustrator and also have experience with data entry, office-related computer work and digital marketing content.</p><p>My goal is to deliver professional designs that communicate clearly and look visually strong.</p></div>
+</div></div></section>
+
+<section id="skills"><div class="container"><div class="title"><h2>Skills & Services</h2><p>What I can help you with</p></div>
+<div class="skills">
+<div class="skill"><strong>Photoshop</strong><br><small>Photo & Graphic Editing</small></div>
+<div class="skill"><strong>Illustrator</strong><br><small>Vector & Logo Design</small></div>
+<div class="skill"><strong>Graphic Design</strong><br><small>Social Media Creatives</small></div>
+<div class="skill"><strong>Data Entry</strong><br><small>Accurate Computer Work</small></div>
+<div class="skill"><strong>Digital Marketing</strong><br><small>Creative Content Support</small></div>
+</div></div></section>
+
+<section id="projects"><div class="container"><div class="title"><h2>My Projects</h2><p>Some of my selected design work</p></div>
+<div class="projects">
+<div class="project"><img src="jli-japan-journey-01.jpg" alt="JLI Japan Journey"><div class="project-info"><h3>JLI Japan Journey</h3><p>Promotional social media design</p></div></div>
+<div class="project"><img src="jli-jft-admission.jpg" alt="JLI JFT Admission"><div class="project-info"><h3>JLI JFT Admission</h3><p>Admission campaign creative</p></div></div>
+<div class="project"><img src="jli-jft-result.jpg" alt="JLI JFT Result"><div class="project-info"><h3>JLI JFT Result</h3><p>Result announcement design</p></div></div>
+<div class="project"><img src="emon-profile-design.jpg" alt="Emon Profile Design"><div class="project-info"><h3>Personal Profile Design</h3><p>Personal branding creative</p></div></div>
+<div class="project"><img src="mctc-logo.jpg" alt="MCTC Logo"><div class="project-info"><h3>MCTC Logo</h3><p>Brand identity / logo design</p></div></div>
+<div class="project"><img src="jli-n5-n4.jpg" alt="JLI N5 N4"><div class="project-info"><h3>JLI N5 / N4 Campaign</h3><p>Educational promotional design</p></div></div>
+<div class="project"><img src="jli-japan-journey-02.jpg" alt="JLI Japan Journey 2"><div class="project-info"><h3>Japan Journey Creative</h3><p>Social media promotional banner</p></div></div>
+<div class="project"><img src="jli-japan-dream.jpg" alt="JLI Japan Dream"><div class="project-info"><h3>Japan Dream</h3><p>Study abroad promotional creative</p></div></div>
+<div class="project"><img src="emon-working.jpg" alt="Emon working"><div class="project-info"><h3>Work Profile</h3><p>Professional workspace photo</p></div></div>
+</div></div></section>
+
+<section id="experience"><div class="container"><div class="title"><h2>Experience</h2><p>My professional capabilities</p></div>
+<div class="experience">
+<div class="card"><h3>Graphic Design</h3><p>Creating promotional banners, social media posts, logos, profile designs and educational institute creatives.</p><ul><li>Adobe Photoshop</li><li>Adobe Illustrator</li><li>Social Media Design</li><li>Branding & Promotional Graphics</li></ul></div>
+<div class="card"><h3>Computer & Digital Work</h3><p>Supporting day-to-day digital tasks with accuracy and attention to detail.</p><ul><li>Data Entry</li><li>Document & Office Work</li><li>Digital Content Support</li><li>Basic Digital Marketing Support</li></ul></div>
+</div></div></section>
+
+<section id="contact"><div class="container"><div class="title"><h2>Contact Me</h2><p>Let's work together</p></div>
+<div class="contact"><h3>Have a project in mind?</h3><p>Feel free to contact me for design, computer and digital work.</p>
+<div class="contact-list">
+<div class="contact-item"><strong>Phone</strong>+880 1405-494797</div>
+<div class="contact-item"><strong>Email</strong>hassanemon71@gmail.com</div>
+<div class="contact-item"><strong>Location</strong>Dhaka, Bangladesh</div>
+</div></div></div></section>
+
+<footer>© <span id="year"></span> Emon Hassan. All Rights Reserved.</footer>
+
+<div class="lightbox" id="lightbox"><div class="close" id="close">&times;</div><img id="lightboxImg" src="" alt="Preview"></div>
+
+<script>
+document.getElementById("year").textContent=new Date().getFullYear();
+const box=document.getElementById("lightbox"), preview=document.getElementById("lightboxImg");
+document.querySelectorAll(".project img").forEach(img=>img.onclick=()=>{preview.src=img.src;box.classList.add("active")});
+document.getElementById("close").onclick=()=>box.classList.remove("active");
+box.onclick=e=>{if(e.target===box)box.classList.remove("active")};
+document.onkeydown=e=>{if(e.key==="Escape")box.classList.remove("active")};
+</script>
+
+<script>
+const progress=document.getElementById('progress');
+window.addEventListener('scroll',()=>{
+  const h=document.documentElement.scrollHeight-innerHeight;
+  progress.style.width=(h>0?(scrollY/h)*100:0)+'%';
+});
+const reveal=document.querySelectorAll('section');
+reveal.forEach(x=>x.classList.add('section-reveal'));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});
+reveal.forEach(x=>io.observe(x));
+</script>
+
+</body>
+</html>
